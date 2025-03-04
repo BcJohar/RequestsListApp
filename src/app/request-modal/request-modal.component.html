@@ -1,0 +1,25 @@
+<div>
+    <div class="mat-dialog-title">
+        <h2 mat-dialog-title>{{mode === 'add' ? 'Ajouter' : 'Modifier'}} une demande d'autorisation</h2>
+    </div>
+    <form class="form" [formGroup]="requestForm">
+        <mat-dialog-content>
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Projet de travaux</mat-label>
+                <input matInput formControlName="title">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Utilisateur</mat-label>
+                <input matInput formControlName="userName">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Contrat</mat-label>
+                <input matInput formControlName="contractNumber">
+            </mat-form-field>
+        </mat-dialog-content>
+        <mat-dialog-actions>
+            <button mat-stroked-button mat-dialog-close class="secondary">Annuler</button>
+            <button mat-raised-button class="primary" (click)="submit()">{{mode === 'add' ? 'Créer' : 'Modifier'}}</button>
+        </mat-dialog-actions>
+    </form>
+</div>

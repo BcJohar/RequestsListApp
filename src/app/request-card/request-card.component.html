@@ -1,0 +1,26 @@
+<mat-card class="request-card">
+    <div class="card-content">
+        <mat-icon class="icon">
+            <span class="material-symbols-outlined">
+                other_admission
+            </span></mat-icon>
+        <div class="info">
+            <span class="title">{{request.type}}</span>
+            <h3>{{request.title}}</h3>
+            <mat-chip-set class="info-chips">
+                <mat-chip class="dark"><span>{{request.userName}}</span></mat-chip>
+                <mat-chip class="light"><span>Contrat {{request.contractNumber}}</span></mat-chip>
+            </mat-chip-set>
+        </div>
+        <div class="settings">
+            <span class="status">{{request.status}}</span>
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="openUpdateRequestDialog()">Modifier</button>
+                <button mat-menu-item (click)="deleteRequest()">Supprimer</button>
+            </mat-menu>
+        </div>
+    </div>
+</mat-card>
